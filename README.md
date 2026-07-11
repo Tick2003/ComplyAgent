@@ -71,9 +71,30 @@ npm install
 npm run dev
 ```
 
-### 3. Open the App
+### 3. Streamlit Demo Dashboard (Alternative Frontend)
 
-Navigate to **http://localhost:5173** in your browser.
+If you prefer a standalone Python GUI / Streamlit interface for pitching or demo videos:
+
+```bash
+# In the project root directory
+pip install -r backend/requirements.txt
+streamlit run streamlit_app.py
+```
+
+### 4. Docker Compose Deployment (Single Command)
+
+To run the entire stack (FastAPI backend + React frontend) in production mode via containers:
+
+```bash
+# Start all containers
+docker-compose up --build
+
+# Run database seed inside the container
+docker-compose exec backend python data/seed.py
+```
+
+- Backend API: **http://localhost:8000**
+- React Web App: **http://localhost:5173**
 
 ---
 
